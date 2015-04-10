@@ -16,6 +16,58 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `answer_detail`
+--
+
+DROP TABLE IF EXISTS `answer_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `answer_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `answer_master_id` int(11) NOT NULL,
+  `translation_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_master_detail_idx` (`answer_master_id`),
+  KEY `fk_translation_idx` (`translation_id`),
+  CONSTRAINT `fk_master_detail` FOREIGN KEY (`answer_master_id`) REFERENCES `answer_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_translation` FOREIGN KEY (`translation_id`) REFERENCES `translations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `answer_detail`
+--
+
+LOCK TABLES `answer_detail` WRITE;
+/*!40000 ALTER TABLE `answer_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `answer_detail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `answer_master`
+--
+
+DROP TABLE IF EXISTS `answer_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `answer_master` (
+  `annotator_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ques_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `answer_master`
+--
+
+LOCK TABLES `answer_master` WRITE;
+/*!40000 ALTER TABLE `answer_master` DISABLE KEYS */;
+/*!40000 ALTER TABLE `answer_master` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `clusters`
 --
 
@@ -102,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-10 10:15:58
+-- Dump completed on 2015-04-10 13:59:25
