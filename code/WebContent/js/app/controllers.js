@@ -1,3 +1,3 @@
 
-var clwsdApp = angular.module('clwsdApp', []);
+var clwsdApp = angular.module('clwsdApp', ['ngSanitize']);
 

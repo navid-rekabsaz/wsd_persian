@@ -41,9 +41,7 @@
                     <div class="row">
                         <div class="12u">
                             <header class="minor">
-                                <h2>{{wordname}} ({{id}})</h2>
-                                <hr />
-                                <span class="byline">{{sentence}}</span>
+                                <span style="font-size:150%" ng-bind-html="question.sentence"></span>
                             </header>
                         </div>
                     </div>
@@ -55,24 +53,31 @@
                     
                     <div class="row">
                         <div class="4u">
-                            <select id="lstclusters" ng-disabled="!clusters" ng-model="translations"
-                                ng-options="cluster for (cluster, translations) in clusters"
+                            <select id="lstclusters" ng-disabled="!question.clusters" ng-model="question.clusterid"
+                                ng-options="c.id as c.name for c in question.clusters"
+                                ng-change="OnClusterChange()"
                                 class="8u" size="10">
                                 <option value=''>--Select--</option>
                             </select>
-                            
+                            <div>
+        						Selected Clusters: {{question.clusterid }}
+    						</div>
                         </div>
                         <div class="4u">
-                            <select id="lsttranslation" ng-disabled="!translations" ng-model="selectedtranslations"
-                                ng-options="translation for translation in translations"
-                                class="8u" size="10">
+                            <select id="lsttranslation" ng-model="question.selectedtranslationids"
+                                ng-options="t.id as t.name for t in question.translations" ng-multiple="true" 
+                                class="8u" size="10" multiple>
                                 <option value=''>--Select--</option>
+                                
                             </select>
+                            <div>
+        						Selected Translations: {{question.selectedtranslationids }}
+    						</div>
                         </div>
                         <div class="4u">
-                            <a href="#" class="button">Save and Next</a>
+                            <a href class="button" ng-click="saveanswer()">Save and Next</a>
                             <hr />
-                            <span class="byline">{{errormessage}}</span>
+                            <span class="byline" style="color:red">{{errorMessage}}</span>
                         </div>
                     </div>
                 </section>
@@ -82,11 +87,12 @@
             <div id="footer">
                 <section class="container">
                     <div class="row">
-                        <h2>{{annotatorname}}</h2>
-                        
+                        <h2>User : {{question.annotatorName}}</h2>
+                        <h2>Word : {{question.wordName}}</h2>
+                        <h2>Word ID : {{question.id}}</h2>
                     </div>
                     <div class="row">
-                        <span class="byline">Number of answered questions : {{answered_ques}} / {{all_ques}}</span>
+                        <span class="byline">Number of answered questions : {{question.answeredQuestionsNumber}} / {{question.allQuestionsNumber}}</span>
                     </div>
                     
                 </section>
