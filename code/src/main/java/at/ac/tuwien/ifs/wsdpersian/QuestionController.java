@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Properties;
 
 @Path("/question")
@@ -174,10 +175,13 @@ public class QuestionController {
 	        Class.forName(dbClass);
 	        Connection connection = DriverManager.getConnection(dbUrl,
 	            username, password);
+
+	        java.text.SimpleDateFormat sdf = 
+	        	     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	        
 	        Statement statement = connection.createStatement();
-	        String query = "insert into answer_master (annotator_id, question_id) "+
-					"values ('"+ Integer.valueOf(answer.annotatorId) + "', '"+ Integer.valueOf(answer.questionId) + "')";
+	        String query = "insert into answer_master (annotator_id, question_id, loadTime, answerTime) "+
+					"values ('"+ Integer.valueOf(answer.annotatorId) + "', '"+ Integer.valueOf(answer.questionId) + "', '"+ String.valueOf(sdf.format(answer.loadTime)) + "', '"+ String.valueOf(sdf.format(answer.answerTime)) + "')";
             statement.executeUpdate(query);
             
             int answer_master_id=1;

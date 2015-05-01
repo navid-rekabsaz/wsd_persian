@@ -1,11 +1,14 @@
 clwsdApp.controller('questionCtrl', function ($scope, $http, $location) {
 	$scope.question = {};
+	$scope.loadTime;
+	$scope.answerTime;
 	
  	$scope.load = function() {
  		$scope.errorMessage = "";
  			
  		$http.get('rest/question/getnewquestion?annotatorid='+$location.search()['annotatorid']).success(function(data) {
               $scope.question = data;
+              $scope.loadTime=Date.now();
         });
                   
         /*
@@ -29,11 +32,14 @@ clwsdApp.controller('questionCtrl', function ($scope, $http, $location) {
 	
 	$scope.saveanswer = function() {
 		
- 		
+		$scope.answerTime=Date.now();
+		
 		var dataObj = {
 			annotatorId : $location.search()['annotatorid'],
 			questionId : $scope.question.id,
-			translationIds : $scope.question.selectedtranslationids
+			translationIds : $scope.question.selectedtranslationids,
+			loadTime : $scope.loadTime,
+			answerTime : $scope.answerTime
 		};
 		
 		var res = $http.post('rest/question', dataObj);

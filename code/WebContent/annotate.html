@@ -25,6 +25,7 @@
         
         <script type="text/javascript" src="js/app/controllers.js"></script>
         <script type="text/javascript" src="js/app/questionController.js"></script>
+        <script type="text/javascript" src="js/app/userController.js"></script>
         
         <noscript>
             <link rel="stylesheet" href="css/skel.css" />
@@ -32,7 +33,9 @@
         </noscript>
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     </head>
-    <body ng-app="clwsdApp"ng-controller="questionCtrl" ng-init="load()">
+    <body ng-app="clwsdApp">
+    	<div ng-controller="userCtrl" ng-init="load()">
+        </div>
         <div ng-controller="questionCtrl" ng-init="load()">
             
             <!-- Section One -->

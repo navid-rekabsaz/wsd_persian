@@ -22,6 +22,17 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
+	
+	<script type="text/javascript">
+		function goToAnnotatePage(annotatorid){
+			var pass=$('#txtpassword').val()
+			if (pass!=''){
+				window.location="annotate.html#?annotatorid="+annotatorid+"&password="+pass;	
+			}
+			
+		}
+	</script>
+
 	<body class="homepage">
 
 		<!-- Header Wrapper -->
@@ -53,22 +64,29 @@
 					</header>
 					<div class="row">
 						<div class="4u">
-							<a href="annotate.html#?annotatorid=1" class="image"><img src="images/serwah.jpg" alt=""></a>
-							<h3>Serweh</h3>
-							<p>We are FACETS and FACETS are us!</p>
+							<a onclick="goToAnnotatePage(1)" href="#" class="image"><img src="images/annotator1.png" alt=""></a>
+							<h3>Sama</h3>
+							<p></p>
 						</div>
 						<div class="4u">
-							<a href="annotate.html#?annotatorid=2" class="image"><img src="images/manoochehr.png" alt=""></a>
-							<h3>Manoochehr</h3>
-							<p>Have fun or let the fun have you!</p>
+							<a onclick="goToAnnotatePage(2)" href="#" class="image"><img src="images/annotator2.png" alt=""></a>
+							<h3>Shaghayegh</h3>
+							<p></p>
 						</div>
 						<div class="4u">
-							<a href="annotate.html#?annotatorid=3" class="image"><img src="images/navid.jpg" alt=""></a>
+							<a onclick="goToAnnotatePage(3)" href="#" class="image"><img src="images/annotator3.jpg" alt=""></a>
 							<h3>Navid</h3>
-							<p>Lay down in the Green Grass!</p>
+							<p>Laying down in the Green Grass!</p>
 						</div>
 						
 					</div>
+					<div class="row">
+						<div class="12u">
+							<h3>Enter password:</h3>
+							<input type="password" id="txtpassword">
+						</div>
+					</div>
+					
 				</section>
 			</div>
 
@@ -77,7 +95,6 @@
 			<section class="container">
 				<header class="major">
 					<h2>Connect with us</h2>
-					
 				</header>
 				<ul class="icons">
 					<li><a href="https://twitter.com/NRekabsaz" class="fa fa-twitter"><span>Twitter</span></a></li>
