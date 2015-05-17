@@ -5,13 +5,16 @@ clwsdApp.controller('questionCtrl', function ($scope, $http, $location) {
 	
  	$scope.load = function() {
  		$scope.errorMessage = "";
- 			
+ 		
  		$http.get('rest/question/getnewquestion?annotatorid='+$location.search()['annotatorid']).success(function(data) {
               $scope.question = data;
               $scope.loadTime=Date.now();
-        });
+              $scope.question.translations=[];
+      		  $scope.question.selectedtranslationids=[];
+ 		});
                   
-        /*
+ 		
+ 		/*
  		cluster1= { 'id':1, 'name':'Fowler', 'translations':[{ 'id':1, 'name':'Pune'}, { 'id':2, 'name':'Mumbai'}, { 'id':3, 'name':'Nagpur'}, { 'id':4, 'name':'Akola'}]};
  		cluster2= { 'id':2, 'name':'Twain', 'translations':[{ 'id':5, 'name':'Montgomery'}, { 'id':6, 'name':'Birmingham'}]};
  		cluster3= { 'id':3, 'name':'Poe', 'translations':[{ 'id':7, 'name':'Springfield'}, { 'id':8, 'name':'Chicago'}]};

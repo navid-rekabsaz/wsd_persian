@@ -13,6 +13,11 @@
 	</repository>
   </repositories>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <version.lucene>4.10.3</version.lucene>
+  </properties>
+
   <dependencies>
 
 	<dependency>
@@ -41,6 +46,24 @@
         <scope>compile</scope>
     </dependency>
     
+    <dependency>
+	  <groupId>org.apache.lucene</groupId>
+	  <artifactId>lucene-core</artifactId>
+	  <version>${version.lucene}</version>
+	</dependency>
+
+    <dependency>
+	  <groupId>org.apache.lucene</groupId>
+	  <artifactId>lucene-analyzers-common</artifactId>
+	  <version>${version.lucene}</version>
+	</dependency>
+    
+    <dependency>
+	  <groupId>org.apache.lucene</groupId>
+	  <artifactId>lucene-queryparser</artifactId>
+	  <version>${version.lucene}</version>
+	</dependency>
+	
   </dependencies>
   
 </project>
