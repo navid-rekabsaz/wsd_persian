@@ -1,0 +1,5 @@
+Scoring 'best' goldfile = golden/German/range_gold.txt sysfile = baselines/German/best/range_best.txt
+Total = 50, attempted = 50
+precision = 3.11, recall = 3.11
+Total with mode 26 attempted 26
+Mode precision = 3.85, Mode recall = 3.85

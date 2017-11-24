@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red69\green60\blue204;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18960\viewh13520\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+First I would like to thank the three reviewers for their comments. Below are some factual observations we hope will make the paper clearer.\
+\
+Reviewer 1 requested to clarify why only nouns are used for the CO-Graph:\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+- Using only words in the construction of the CO-Graph is an assumption took by the original paper with the justification that nouns are the most informative elements in the sentences.\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+Also Reviewer 1 pertinently noted that Figure 1 is potentially mislabelled:\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+- Figure 1 is Best and is mistakenly labeled as OOF.\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+Reviewer 2 asked about the use of the term `relatedness' and the meaning of `% clus. consensus':\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+- The word \expnd0\expndtw0\kerning0
+`\expnd0\expndtw0\kerning0
+relatedness\'91 is used as synonym to \'92similarity\'92 while I agree that it is better to only use the word \'92similarity\'92 as they are not completely exchangeable.\
+\
+- \'a0\expnd0\expndtw0\kerning0
+`
+\f1 \expnd0\expndtw0\kerning0
+% clus. consensus\'92 (percentage cluster consensus) is described in related work (
+\f0 \expnd0\expndtw0\kerning0
+\'a0Lefever et al.(2014),) and\'a0
+\f1 \expnd0\expndtw0\kerning0
+represents the percentage of sentences for which all annotators agree on the cluster.
+\f0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+
+\f0 \cf0 \expnd0\expndtw0\kerning0
+\
+Both Reviewer 2 and Reviewer 3 enquired about the use of `max' as an aggregator function:\
+\pard\pardeftab720
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+- The motivation behind using max in Eq. (2) is due to the morphological characteristic of Persian specially for verbs such that many verbs consist of more than one word while only one of them represents the meaning of the verb (more detail in Seraji et al. (2012) Section 2.2) \'a0
+\f0 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+Reviewer 3 also enquires about P(t) in Equations 3 and 4 and makes an observation about the use of Google as a lexicon:\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+- P(t) in Eq. (3), (4) is not a monolingual weight, but a measure which shows how frequent the translation t is regarding to its original word. It is usually achieved by using a bilingual corpora and applying word alignment and finally finding the translation frequency.  In our case, we found Google Translator as the only lexicon that provides a weight for each translation. Although this service may or may not use a parallel corpora to create the weights, since such corpora are not publicly available, the method is useful for achieving superior results in CL-WSD  using only publicly available resources.\
+\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
+Finally, Reviewer 3 suggests writing Algorithm 1 as an equation similar to Eq 4.\'a0\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+- We actually had it written as an equation in an earlier draft, but found writing Algorithm 1 as such extremely confusing, since it finds the maxSim and then uses the maxVector (vector representing the word with the maximum similarity).}

@@ -1,0 +1,5 @@
+Scoring 'best' goldfile = golden/Persian/post_gold.txt sysfile = baselines/PersianOld//best/post_best.txt
+Total = 50, attempted = 50
+precision = 9.17, recall = 9.17
+Total with mode 22 attempted 22
+Mode precision = 4.55, Mode recall = 4.55

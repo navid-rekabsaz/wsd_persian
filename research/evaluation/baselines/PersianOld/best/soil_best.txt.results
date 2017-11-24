@@ -1,0 +1,5 @@
+Scoring 'best' goldfile = golden/Persian/soil_gold.txt sysfile = baselines/PersianOld//best/soil_best.txt
+Total = 50, attempted = 50
+precision = 21.94, recall = 21.94
+Total with mode 36 attempted 36
+Mode precision = 0.00, Mode recall = 0.00

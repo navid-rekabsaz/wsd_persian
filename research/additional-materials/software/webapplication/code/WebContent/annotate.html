@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Solarize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+ -->
+<html>
+    <head>
+        <title>Annotation</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.dropotron.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        
+        <script type="text/javascript" src="js/angular-1.3.2/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-1.3.2/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/angular-1.3.2/angular-resource.min.js"></script>
+        
+        <script type="text/javascript" src="js/angular-1.3.2/angular-sanitize.min.js"></script>
+        
+        <script type="text/javascript" src="js/app/controllers.js"></script>
+        <script type="text/javascript" src="js/app/questionController.js"></script>
+        <script type="text/javascript" src="js/app/userController.js"></script>
+        
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    </head>
+    <body ng-app="clwsdApp">
+    	<div ng-controller="userCtrl" ng-init="load()">
+        </div>
+        <div ng-controller="questionCtrl" ng-init="load()">
+            
+            <!-- Section One -->
+            <div class="wrapper style4">
+                <section class="container">
+                    <div class="row">
+                        <div class="12u">
+                            <header class="minor">
+                                <span style="font-size:150%" ng-bind-html="question.sentence"></span>
+                            </header>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="wrapper style2">
+                <section class="container">
+                    
+                    <div class="row">
+                        <div class="4u">
+                            <select id="lstclusters" ng-disabled="!question.clusters" ng-model="question.clusterid"
+                                ng-options="c.id as c.name for c in question.clusters"
+                                ng-change="OnClusterChange()"
+                                class="8u" size="10">
+                                <option value=''>--Select--</option>
+                            </select>
+                            <div>
+        						Selected Clusters: {{question.clusterid }}
+    						</div>
+                        </div>
+                        <div class="4u">
+                            <select id="lsttranslation" ng-model="question.selectedtranslationids"
+                                ng-options="t.id as t.name for t in question.translations" ng-multiple="true" 
+                                class="8u" size="18" multiple>
+                                <option value=''>--Select--</option>
+                                
+                            </select>
+                            <div>
+        						Selected Translations: {{question.selectedtranslationids }}
+    						</div>
+                        </div>
+                        <div class="4u">
+                            <a href class="button" ng-click="saveanswer()">Save and Next</a>
+                            <hr />
+                            <span class="byline" style="color:red">{{errorMessage}}</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Footer -->
+            <div id="footer">
+                <section class="container">
+                    <div class="row">
+                        <h2>User : {{question.annotatorName}}</h2>
+                        <h2>Word : {{question.wordName}}</h2>
+                        <h2>Sentence ID : {{question.id}}</h2>
+                    </div>
+                    <div class="row">
+                        <span class="byline">Number of answered questions : {{question.answeredQuestionsNumber}} / {{question.allQuestionsNumber}}</span>
+                    </div>
+                    
+                </section>
+                
+                
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+Scoring 'oof' goldfile = golden/Persian/letter_gold.txt sysfile = baselines/PersianOld//oof/letter_oof.txt
+Total = 50, attempted = 50
+precision = 43.23, recall = 43.23
+Total with mode 32 attempted 32
+precision = 34.38, recall = 34.38

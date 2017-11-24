@@ -1,0 +1,5 @@
+Scoring 'oof' goldfile = golden/German/match_gold.txt sysfile = baselines/German//oof/match_oof.txt
+Total = 50, attempted = 50
+precision = 10.24, recall = 10.24
+Total with mode 28 attempted 28
+precision = 0.00, recall = 0.00

@@ -1,0 +1,120 @@
+%
+% File acl2015.tex
+%
+% Contact: car@ir.hit.edu.cn, gdzhou@suda.edu.cn
+%%
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage{acl2015}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{todonotes}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{url}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\include{pythonlisting}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{gb4e}
+\noautomath
+
+\usepackage{array,multirow}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{arabtex}
+\novocalize
+\setfarsi
+\yahnodots
+
+\hyphenation{RelAgg}
+\hyphenation{RelGreedy}
+
+%\setlength\titlebox{5cm}
+
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+
+\title{Unsupervised Cross-Lingual Word Sense Disambiguation on Languages with Scarce Resources: Application to Persian}
+
+\author{}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\vspace{-0.2cm}
+We explore the use of unsupervised methods in Cross-Lingual Word Sense Disambiguation (CL-WSD) with the application of English to Persian (Farsi). We create a new test collection for CL-WSD in Persian, following the format of the SemEval 2013 CL-WSD task. We then evaluate our semantic vector word representation-based approach on the new evaluation benchmark and compare it with the standard baseline of the task as well as the state-of-the-art unsupervised system (CO-Graph). The results show that our approach outperforms both the standard baseline and the CO-Graph system in both of the task evaluation metrics (\emph{Out-Of-Five} and \emph{Best result}).
+\vspace{-0.2cm}
+\end{abstract}
+
+
+\section{Introduction}
+\vspace{-0.2cm}
+\label{sec:introduction}
+\input{introduction}
+\vspace{-0.2cm}
+
+\section{Resources in Persian Language}
+\vspace{-0.2cm}
+\label{sec:relatedwork}
+\input{relatedwork}
+\vspace{-0.2cm}
+
+\section{Persian CL-WSD Evaluation Benchmark}
+\vspace{-0.2cm}
+\label{sec:persian_collection}
+\input{persian_collection}
+\vspace{-0.2cm}
+
+\section{Unsupervised CL-WSD Method}
+\vspace{-0.2cm}
+\label{sec:methodology}
+\input{methodology}
+\vspace{-0.2cm}
+
+\section{Experiments and Results}
+\vspace{-0.2cm}
+\label{sec:experiments}
+\input{experiments}
+\vspace{-0.3cm}
+
+\section{Conclusion and Future Work}
+\vspace{-0.3cm}
+\label{sec:conclusion}
+We study the opportunities of applying unsupervised approaches on CL-WSD, focusing on its application in English to Persian language. The proposed method  addresses the CL-WSD problem using semantic vector representations of the words in the context. In addition, addressing the problem of lack of standard evaluation framework for Persian language in the NLP domain, we create and make available a new benchmark for English to Persian CL-WSD following the format of the SemEval 2013 CL-WSD task. Finally, evaluating our approach on the new benchmark, we show that it outperforms both the CO-Graph system--a state-of-the-art system in unsupervised CL-WSD--as well as the standard baseline, for both the \emph{Best} and \emph{Out-of-five} evaluation metrics of the task.  
+
+We have however also observed fundamental limitations of the methods based exclusively on context as bag of words. The combination of  language modeling and deep learning methods for CL-WSD will probably address these current limitations. Nevertheless, the current work offers a possible solution for all languages or domains with scarce knowledge-based  or parallel corpora resources, by exploiting the use of a monolingual corpus together with a bilingual lexicon.
+
+% include your own bib file like this:
+\bibliographystyle{acl}
+\bibliography{refer}
+
+\end{document}

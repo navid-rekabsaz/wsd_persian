@@ -1,0 +1,5 @@
+Scoring 'oof' goldfile = golden/Persian/soil_gold.txt sysfile = baselines/Persian//oof/soil_oof.txt
+Total = 50, attempted = 50
+precision = 74.72, recall = 74.72
+Total with mode 36 attempted 36
+precision = 80.56, recall = 80.56

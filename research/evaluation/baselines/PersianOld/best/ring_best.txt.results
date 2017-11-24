@@ -1,0 +1,5 @@
+Scoring 'best' goldfile = golden/Persian/ring_gold.txt sysfile = baselines/PersianOld//best/ring_best.txt
+Total = 50, attempted = 50
+precision = 10.21, recall = 10.21
+Total with mode 19 attempted 19
+Mode precision = 5.26, Mode recall = 5.26
