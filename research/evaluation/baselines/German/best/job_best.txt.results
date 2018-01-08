@@ -1,5 +1,0 @@
-Scoring 'best' goldfile = golden/German/job_gold.txt sysfile = baselines/German/best/job_best.txt
-Total = 50, attempted = 50
-precision = 6.67, recall = 6.67
-Total with mode 25 attempted 25
-Mode precision = 0.00, Mode recall = 0.00

@@ -1,5 +1,0 @@
-Scoring 'oof' goldfile = golden/Persian/job_gold.txt sysfile = baselines/PersianOld//oof/job_oof.txt
-Total = 50, attempted = 50
-precision = 59.08, recall = 59.08
-Total with mode 19 attempted 19
-precision = 57.89, recall = 57.89

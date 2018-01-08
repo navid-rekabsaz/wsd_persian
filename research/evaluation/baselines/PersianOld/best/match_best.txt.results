@@ -1,5 +1,0 @@
-Scoring 'best' goldfile = golden/Persian/match_gold.txt sysfile = baselines/PersianOld//best/match_best.txt
-Total = 50, attempted = 50
-precision = 14.63, recall = 14.63
-Total with mode 32 attempted 32
-Mode precision = 3.13, Mode recall = 3.13

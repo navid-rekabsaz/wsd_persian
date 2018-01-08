@@ -1,5 +1,0 @@
-Scoring 'best' goldfile = golden/Persian/letter_gold.txt sysfile = baselines/Persian//best/letter_best.txt
-Total = 50, attempted = 50
-precision = 22.08, recall = 22.08
-Total with mode 32 attempted 32
-Mode precision = 40.63, Mode recall = 40.63

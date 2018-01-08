@@ -1,5 +1,0 @@
-Scoring 'oof' goldfile = golden/German/rest_gold.txt sysfile = baselines/German//oof/rest_oof.txt
-Total = 50, attempted = 50
-precision = 36.71, recall = 36.71
-Total with mode 21 attempted 21
-precision = 61.90, recall = 61.90
